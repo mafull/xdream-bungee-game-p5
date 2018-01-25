@@ -45,6 +45,13 @@ function Game(x, y, width, height, bgColour) {
 	}
 
 
+	this.hitHole = function(i) {
+		if(i < this.holes.length) {
+			return this.holes[i].hit();
+		}
+	}
+
+
 	// Hole class
 	function Hole(x, y, radius, points, bgColour) {
 		this.x = x;
@@ -82,6 +89,12 @@ function Game(x, y, width, height, bgColour) {
 		}
 
 
+		this.hit = function() {
+			this.clickPersistCounter = 1;
+			return this.points;
+		}
+
+		
 		this.checkClick = function(x, y) {
 			var dx = this.x - x;
 			var dy = this.y - y;

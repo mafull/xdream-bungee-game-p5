@@ -11,9 +11,12 @@
     <link rel="stylesheet" type="text/css" href="public/lib/semantic/semantic.min.css">
 
     <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- p5 -->
     <script src="./p5/p5.min.js"></script>
     <script src="./p5/addons/p5.dom.min.js"></script>
     <script src="./p5/addons/p5.sound.min.js"></script>
+    <script src="./p5/addons/p5.serialport.js"></script>
   </head>
   <body>
 
@@ -45,12 +48,10 @@
 
 
     <div class="ui main text container center aligned segment" id="leaderboardContainer">
-      <div class="ui  center aligned segment" id="currentUserSegment" style="display: none;"><!--  style="display: none;"> -->
-        <!-- <form class="ui inline form"> -->
-          <span id="scoreText"></span>
-          <span id="countdownText"></span>
-          <button type="button" id="finishButton" class="ui huge yellow button" onClick="finishButtonPressed()">Finish</button>
-        <!-- </form> -->
+      <div class="ui  center aligned segment" id="currentUserSegment" style="display: none;">
+        <span id="scoreText"></span>
+        <span id="countdownText"></span>
+        <button type="button" id="finishButton" class="ui huge yellow button" onClick="finishButtonPressed()">Finish</button>
       </div>
       <header class="ui huge header">Leaderboard</header>
       <table id="leaderboardTable" class="ui center aligned celled table">
@@ -63,8 +64,6 @@
         </thead>
       </table>
     </div>
-
-
     
 
 

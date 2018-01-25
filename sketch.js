@@ -1,4 +1,18 @@
-// Include additional files
+// --------------------------------------------------------------------------------
+//  Settings
+// --------------------------------------------------------------------------------
+const DEBUG_MODE = false;
+
+const SERIAL_PORT = "COM3";
+
+const SCALE = 2.5;
+const TIME_LIMIT = 30;
+
+const XD_COLOUR = "#222222";
+
+// --------------------------------------------------------------------------------
+//  Additional includes
+// --------------------------------------------------------------------------------
 var script = document.createElement("script");
 script.src = "./game.js";
 document.head.appendChild(script);
@@ -6,16 +20,11 @@ script = document.createElement("script");
 script.src = "./leaderboard.js";
 document.head.appendChild(script);
 
-
-const DEBUG_MODE = true;
-const SCALE = 2.5;
-const TIMER = 5;
-
-const XD_COLOUR = "#222222";
-
+// --------------------------------------------------------------------------------
+//  Code
+// --------------------------------------------------------------------------------
 const BOARD_WIDTH = 200 * SCALE;
 const BOARD_HEIGHT = 300 * SCALE;
-
 
 var canvas;
 var canvasWidth, canvasHeight;
@@ -27,6 +36,8 @@ var user;
 
 var countdownTimer;
 var secondsRemaining;
+
+var inData = "";
 
 var sketch = function(p) {
 
@@ -49,6 +60,12 @@ var sketch = function(p) {
 		game.addHole(0.1, 0.1, 0.05, 15, "#0F0");
 		game.addHole(0.5, 0.7, 0.15, 5, "#0F0");
 		game.addHole(0.75, 0.25, 0.2, 2, "#0F0");
+
+		// Initialise serial
+		serial = new p5.SerialPort();
+		serial.on("data", serialEvent);
+		serial.on("error", serialError);
+		serial.open(SERIAL_PORT, { baudrate: 9600 });
 	}
 
 
@@ -99,11 +116,11 @@ function startButtonPressed() {
 	sketch = new p5(sketch, "container");
 	$("#canvasContainer")[0].style.display = "block";
 	$("#scoreText")[0].textContent = "Score: 0";
-	$("#countdownText")[0].textContent = "Time remaining: " + TIMER + "s";
+	$("#countdownText")[0].textContent = "Time remaining: " + TIME_LIMIT + "s";
 	$("#currentUserSegment")[0].style.display = "block";
 
 	// Start the countdown timer
-	secondsRemaining = TIMER;
+	secondsRemaining = TIME_LIMIT;
 	countdownTimer = window.setInterval(function() {
 		secondsRemaining--;
 		$("#countdownText")[0].textContent = "Time remaining: " + secondsRemaining + "s";
@@ -153,4 +170,21 @@ function finishButtonPressed() {
 	$("#currentUserSegment")[0].style.display = "none";
 	$("#canvasContainer")[0].style.display = "none";
 	$("#formContainer")[0].style.display = "block";
+}
+
+
+function serialEvent() {
+	var b = String.fromCharCode(serial.read());
+	console.log(b);
+	
+	var points = game.hitHole(b);
+	if(points && user != null) {
+		var totalPoints = user.addPoints(points);
+		$("#scoreText")[0].textContent = "Score: " + totalPoints;
+	}
+}
+
+
+function serialError(err) {
+	console.log("Serial port error: " + err);
 }

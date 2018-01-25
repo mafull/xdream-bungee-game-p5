@@ -11,10 +11,40 @@ body {
 
 	/* Vertical alignment */
 	align-items: center;
+
+	background-color: #222222;
+}
+
+section {
+	float: left;
+	justify-content: center;
+}
+
+img {
+	max-width: 80%;
+
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 40px;
+}
+
+
+span {
+	color: white;
+}
+
+.ui.segment {
+	background-color: #222222;
+	color: white;
+}
+
+.ui.header {
+	color: white;
 }
 
 #container {
-	align-items: center;
+	/*text-align: center;*/
 }
 
 #currentUserSegment {
@@ -22,16 +52,31 @@ body {
 }
 
 #scoreText {
-	font-size: 30px;
-	float: left;
+	font-size: 50px;
+	float: center;
 }
 
 #countdownText {
 	font-size: 25px;
 	float: center;
+	display: none;
 }
 
 #finishButton {
-	float: right;
-	padding: 10px;
+	/*float: right;*/
+	/*padding: 10px;*/
+}
+
+
+#canvasContainer {
+	background-color: #222222;
+}
+
+#haveAGoSegment {
+	max-width: 80%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+
+	background-color: #222222;
 }

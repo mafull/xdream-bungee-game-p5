@@ -2,7 +2,7 @@ var table;
 var file;
 
 
-function preload() {
+// function preload() {
 	//table = loadTable("./assets/leaderboard.csv", "csv", "header");
 
 	// Check for File API support
@@ -16,7 +16,7 @@ function preload() {
 	// fr.onload = function
 
 
-}
+//}
 
 
 function Leaderboard() {

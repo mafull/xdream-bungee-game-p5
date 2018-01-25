@@ -29,6 +29,18 @@ function Game(x, y, width, height, bgColour) {
 		this.holes.forEach(function(hole) {
 			hole.draw(p);
 		});
+
+		// Draw separators
+		p.stroke(255);
+		// p.line(
+		// 	this.x + (this.width / 2), this.y,
+		// 	this.x + (this.width / 2), (this.y - this.height));
+		// p.line(
+		// 	this.x, (this.y - (this.height / 3)),
+		// 	(this.x + this.width), (this.y - (this.height / 3)));
+		// p.line(
+		// 	this.x, (this.y - (this.height / (3 / 2))),
+		// 	(this.x + this.width), (this.y - (this.height / (3 / 2))));
 	}
 
 
@@ -60,6 +72,7 @@ function Game(x, y, width, height, bgColour) {
 		this.points = points;
 		this.bgColour = bgColour;
 		this.textSize = 20;
+		this.text = null;
 
 		this.clickPersistCounter = 0;
 
@@ -82,10 +95,23 @@ function Game(x, y, width, height, bgColour) {
 
 			// Draw number of points
 			p.stroke(0);
-			p.textAlign(p.CENTER, p.CENTER);
 			p.textSize(this.textSize);
-			p.fill(0);
-			p.text(this.points, this.x, this.y);			
+
+			if(this.radius < 15) {
+				p.textAlign(p.LEFT, p.BOTTOM);
+				p.fill(255);
+				p.text(
+					this.points,
+					this.x + (Math.sqrt((this.radius*this.radius) / 2) + 5),
+					this.y - (Math.sqrt((this.radius*this.radius) / 2)) - 5);
+			} else {
+				p.textAlign(p.CENTER, p.CENTER);
+				p.fill(0);
+				p.text(
+					this.points,
+					this.x,
+					this.y);
+			}
 		}
 
 
@@ -94,7 +120,7 @@ function Game(x, y, width, height, bgColour) {
 			return this.points;
 		}
 
-		
+
 		this.checkClick = function(x, y) {
 			var dx = this.x - x;
 			var dy = this.y - y;

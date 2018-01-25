@@ -1,12 +1,12 @@
 // --------------------------------------------------------------------------------
 //  Settings
 // --------------------------------------------------------------------------------
-const DEBUG_MODE = false;
+const DEBUG_MODE = true;
 
-const SERIAL_PORT = "COM3";
+const SERIAL_PORT = "COM4";
 
 const SCALE = 2.5;
-const TIME_LIMIT = 30;
+const TIME_LIMIT = 3000;
 
 const XD_COLOUR = "#222222";
 
@@ -57,10 +57,16 @@ var sketch = function(p) {
 			XD_COLOUR);
 
 		// Add holes to the game
-		game.addHole(0.1, 0.1, 0.05, 15, "#0F0");
-		game.addHole(0.5, 0.7, 0.15, 5, "#0F0");
-		game.addHole(0.75, 0.25, 0.2, 2, "#0F0");
-
+		game.addHole(0.23, 0.52, 0.17, 5, "#0F0");
+		game.addHole(0.7, 0.8, 0.12, 10, "#0F0");
+		game.addHole(0.84, 0.17, 0.098, 15, "#0F0");
+		game.addHole(0.1, 0.12, 0.013, 1000, "#0F0");
+		game.addHole(0.65, 0.56, 0.05, 50, "#0F0");
+		game.addHole(0.2, 0.8, 0.07, 30, "#0F0");
+		game.addHole(0.87, 0.44, 0.085, 20, "#0F0");
+		game.addHole(0.9, 0.93, 0.025, 200, "#0F0");
+		game.addHole(0.35, 0.25, 0.085, 20, "#0F0");
+		
 		// Initialise serial
 		serial = new p5.SerialPort();
 		serial.on("data", serialEvent);
@@ -70,7 +76,7 @@ var sketch = function(p) {
 
 
 	p.draw = function() {
-		//p.background(200);
+		p.background(200);
 
 		// Draw the game board
 		game.draw(p);
@@ -118,6 +124,7 @@ function startButtonPressed() {
 	$("#scoreText")[0].textContent = "Score: 0";
 	$("#countdownText")[0].textContent = "Time remaining: " + TIME_LIMIT + "s";
 	$("#currentUserSegment")[0].style.display = "block";
+	$("#haveAGoSegment")[0].style.display = "block";
 
 	// Start the countdown timer
 	secondsRemaining = TIME_LIMIT;
@@ -167,6 +174,7 @@ function finishButtonPressed() {
 	}
 
 	sketch = null;
+	$("#haveAGoSegment")[0].style.display = "none";
 	$("#currentUserSegment")[0].style.display = "none";
 	$("#canvasContainer")[0].style.display = "none";
 	$("#formContainer")[0].style.display = "block";

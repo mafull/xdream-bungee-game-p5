@@ -2,12 +2,74 @@
 <html>
   <head>
     <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
-    <style> body {padding: 0; margin: 0;} </style>
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="public/lib/jquery/jquery-3.2.1.min.js"></script>
+
+    <!-- Semantic UI -->
+    <script type="text/javascript" src="public/lib/semantic/semantic.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="public/lib/semantic/semantic.min.css">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="./p5/p5.min.js"></script>
     <script src="./p5/addons/p5.dom.min.js"></script>
     <script src="./p5/addons/p5.sound.min.js"></script>
-    <script src="sketch.js"></script>
   </head>
   <body>
+
+    <!-- <input type="file" accept=".csv" onchange="console.log(event)"><br>
+    <div id="output">
+
+    </div> -->
+
+    <div class="ui main text container center aligned segment" id="formContainer">
+      <header class="ui huge header">Have a go!</header>
+      <form id="newUserForm" class="ui huge form">
+        <div class="field required">
+          <label>Name</label>
+          <input type="text" id="inputName" placeholder="Name" required autofocus>
+        </div>
+        <div class="field required">
+          <label>Phone number</label>
+          <input type="text" id="inputNumber" pattern="[0-9]+" placeholder="Phone number" required>
+        </div>
+        <button type="button" onClick="startButtonPressed()" class="ui fluid huge positive button">Start</button>
+      </form>
+    </div>
+
+
+    <div class="ui main text container center aligned segment" id="canvasContainer" style="display: none;">
+      <div id="container">
+      </div>      
+    </div>
+
+
+    <div class="ui main text container center aligned segment" id="leaderboardContainer">
+      <div class="ui  center aligned segment" id="currentUserSegment" style="display: none;"><!--  style="display: none;"> -->
+        <!-- <form class="ui inline form"> -->
+          <span id="scoreText"></span>
+          <span id="countdownText"></span>
+          <button type="button" id="finishButton" class="ui huge yellow button" onClick="finishButtonPressed()">Finish</button>
+        <!-- </form> -->
+      </div>
+      <header class="ui huge header">Leaderboard</header>
+      <table id="leaderboardTable" class="ui center aligned celled table">
+        <thead>
+          <tr>
+            <th class="two wide">Rank</th>
+            <th class="ten wide">Name</th>
+            <th class="threee wide">Score</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+
+
+    
+
+
+
+    <script src="sketch.js"></script>
+
   </body>
 </html>

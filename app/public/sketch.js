@@ -1,27 +1,56 @@
 // --------------------------------------------------------------------------------
 //  Settings
 // --------------------------------------------------------------------------------
-const DEBUG_MODE = true;
+const DEBUG_MODE = false;
 
 const SERIAL_PORT = "COM4";
 
 const SCALE = 2.5;
-const TIME_LIMIT = 3000;
+const TIME_LIMIT = 30000000;
 
 const XD_COLOUR = "#222222";
 
 // --------------------------------------------------------------------------------
-//  Additional includes
+//  Requirements
 // --------------------------------------------------------------------------------
-var script = document.createElement("script");
-script.src = "./game.js";
-document.head.appendChild(script);
-script = document.createElement("script");
-script.src = "./leaderboard.js";
-document.head.appendChild(script);
+const electron    = require("electron"),
+      SerialPort  = require("serialport"),
+      fs          = require("fs");
+console.log(SerialPort);
 
 // --------------------------------------------------------------------------------
-//  Code
+//  Serial stuff
+// --------------------------------------------------------------------------------
+var serialPort;
+SerialPort.list(function(err, ports) {
+	console.log("Available serial ports:");
+	console.log(ports);
+
+	serialPort = new SerialPort(
+		ports[0].comName,
+		{
+			baudRate: 9600
+		});
+		serialPort.on("open", function() {
+		console.log("Serial port opened");
+		serialPort.on("data", function(data) {
+			// var num = String.fromCharCode(data);
+			// console.log("data:" + data + " num:" + num);
+			
+			if(game) {
+				var points = game.hitHole(data);
+				if(points && user != null) {
+					var totalPoints = user.addPoints(points);
+					$("#scoreText")[0].textContent = "Score: " + totalPoints;
+				}
+			}
+		});
+	});
+});
+
+
+// --------------------------------------------------------------------------------
+//  Other code
 // --------------------------------------------------------------------------------
 const BOARD_WIDTH = 200 * SCALE;
 const BOARD_HEIGHT = 300 * SCALE;
@@ -31,6 +60,7 @@ var canvasWidth, canvasHeight;
 
 var sketch;
 var leaderboard;
+var game;
 
 var user;
 
@@ -38,6 +68,7 @@ var countdownTimer;
 var secondsRemaining;
 
 var inData = "";
+
 
 var sketch = function(p) {
 
@@ -66,12 +97,6 @@ var sketch = function(p) {
 		game.addHole(0.87, 0.44, 0.085, 20, "#0F0");
 		game.addHole(0.9, 0.93, 0.025, 200, "#0F0");
 		game.addHole(0.35, 0.25, 0.085, 20, "#0F0");
-		
-		// Initialise serial
-		serial = new p5.SerialPort();
-		serial.on("data", serialEvent);
-		serial.on("error", serialError);
-		serial.open(SERIAL_PORT, { baudrate: 9600 });
 	}
 
 
@@ -178,21 +203,14 @@ function finishButtonPressed() {
 	$("#currentUserSegment")[0].style.display = "none";
 	$("#canvasContainer")[0].style.display = "none";
 	$("#formContainer")[0].style.display = "block";
+
+	// Save to file
+	appendToFile(leaderboard.users[leaderboard.users.length - 1].getCSV());
 }
 
 
-function serialEvent() {
-	var b = String.fromCharCode(serial.read());
-	console.log(b);
-	
-	var points = game.hitHole(b);
-	if(points && user != null) {
-		var totalPoints = user.addPoints(points);
-		$("#scoreText")[0].textContent = "Score: " + totalPoints;
-	}
-}
-
-
-function serialError(err) {
-	console.log("Serial port error: " + err);
+function appendToFile(text) {
+	var stream = fs.createWriteStream("./leaderboard.csv", {flags: "a"});
+	stream.write(text + "\n");
+	stream.end();
 }

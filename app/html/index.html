@@ -4,19 +4,24 @@
     <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
 
     <!-- JQuery -->
-    <script type="text/javascript" src="public/lib/jquery/jquery-3.2.1.min.js"></script>
+    <script>
+      window.jQuery = window.$ = require("../public/lib/jquery/jquery-3.2.1.min.js");
+
+      $(document).ready(function() {
+        console.log( "jQuery is loaded" );
+      });
+    </script>
 
     <!-- Semantic UI -->
-    <script type="text/javascript" src="public/lib/semantic/semantic.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="public/lib/semantic/semantic.min.css">
+    <script type="text/javascript" src="../public/lib/semantic/semantic.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../public/lib/semantic/semantic.min.css">
 
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../public/stylesheets/style.css">
 
     <!-- p5 -->
-    <script src="./p5/p5.min.js"></script>
-    <script src="./p5/addons/p5.dom.min.js"></script>
-    <script src="./p5/addons/p5.sound.min.js"></script>
-    <script src="./p5/addons/p5.serialport.js"></script>
+    <script src="../public/lib/p5/p5.min.js"></script>
+    <script src="../public/lib/p5/addons/p5.dom.min.js"></script>
+    <script src="../public/lib/p5/addons/p5.sound.min.js"></script>
   </head>
   <body>
 
@@ -50,7 +55,7 @@
     
 
     <section>
-      <img src="./images/logo.png">
+      <img src="../assets/images/logo.png">
 
       <div class="ui main text center aligned segment" id="haveAGoSegment" style="display: none;">
         <button type="button" id="finishButton" class="ui huge fluid green button" onClick="finishButtonPressed()">Have a go!</button>
@@ -79,9 +84,12 @@
     
     
 
+  
 
 
-    <script src="sketch.js"></script>
+    <script src="../public/leaderboard.js"></script>
+    <script src="../public/game.js"></script>
+    <script src="../public/sketch.js"></script>
 
   </body>
 </html>

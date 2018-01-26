@@ -1,0 +1,385 @@
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   README.md
+	new file:   app/app.js
+	new file:   app/assets/icons/mac/xdlogo.png.icns
+	new file:   app/assets/icons/png/128x128.png
+	new file:   app/assets/icons/png/16x16.png
+	new file:   app/assets/icons/png/24x24.png
+	new file:   app/assets/icons/png/256x256.png
+	new file:   app/assets/icons/png/32x32.png
+	new file:   app/assets/icons/png/48x48.png
+	new file:   app/assets/icons/png/512x512.png
+	new file:   app/assets/icons/png/64x64.png
+	new file:   app/assets/icons/png/96x96.png
+	new file:   app/assets/icons/win/xdlogo.png.ico
+	new file:   app/assets/icons/xdlogo.png
+	renamed:    images/logo.png -> app/assets/images/logo.png
+	renamed:    index.html -> app/html/index.html
+	new file:   app/leaderboard.csv
+	new file:   app/node_modules/.bin/asar
+	new file:   app/node_modules/.bin/asar.cmd
+	new file:   app/node_modules/.bin/decompress-zip
+	new file:   app/node_modules/.bin/decompress-zip.cmd
+	new file:   app/node_modules/.bin/detect-libc
+	new file:   app/node_modules/.bin/detect-libc.cmd
+	new file:   app/node_modules/.bin/electron
+	new file:   app/node_modules/.bin/electron-download
+	new file:   app/node_modules/.bin/electron-download.cmd
+	new file:   app/node_modules/.bin/electron-osx-flat
+	new file:   app/node_modules/.bin/electron-osx-flat.cmd
+	new file:   app/node_modules/.bin/electron-osx-sign
+	new file:   app/node_modules/.bin/electron-osx-sign.cmd
+	new file:   app/node_modules/.bin/electron-packager
+	new file:   app/node_modules/.bin/electron-packager.cmd
+	new file:   app/node_modules/.bin/electron-rebuild
+	new file:   app/node_modules/.bin/electron-rebuild.cmd
+	new file:   app/node_modules/.bin/electron.cmd
+	new file:   app/node_modules/.bin/extract-zip
+	new file:   app/node_modules/.bin/extract-zip.cmd
+	new file:   app/node_modules/.bin/mkdirp
+	new file:   app/node_modules/.bin/mkdirp.cmd
+	new file:   app/node_modules/.bin/node-gyp
+	new file:   app/node_modules/.bin/node-gyp.cmd
+	new file:   app/node_modules/.bin/nopt
+	new file:   app/node_modules/.bin/nopt.cmd
+	new file:   app/node_modules/.bin/nugget
+	new file:   app/node_modules/.bin/nugget.cmd
+	new file:   app/node_modules/.bin/p5serial
+	new file:   app/node_modules/.bin/p5serial.cmd
+	new file:   app/node_modules/.bin/prebuild-install
+	new file:   app/node_modules/.bin/prebuild-install.cmd
+	new file:   app/node_modules/.bin/pretty-bytes
+	new file:   app/node_modules/.bin/pretty-bytes.cmd
+	new file:   app/node_modules/.bin/prominode
+	new file:   app/node_modules/.bin/prominode.cmd
+	new file:   app/node_modules/.bin/rc
+	new file:   app/node_modules/.bin/rc.cmd
+	new file:   app/node_modules/.bin/rimraf
+	new file:   app/node_modules/.bin/rimraf.cmd
+	new file:   app/node_modules/.bin/semver
+	new file:   app/node_modules/.bin/semver.cmd
+	new file:   app/node_modules/.bin/serialport-list
+	new file:   app/node_modules/.bin/serialport-list.cmd
+	new file:   app/node_modules/.bin/serialport-repl
+	new file:   app/node_modules/.bin/serialport-repl.cmd
+	new file:   app/node_modules/.bin/serialport-term
+	new file:   app/node_modules/.bin/serialport-term.cmd
+	new file:   app/node_modules/.bin/sshpk-conv
+	new file:   app/node_modules/.bin/sshpk-conv.cmd
+	new file:   app/node_modules/.bin/sshpk-sign
+	new file:   app/node_modules/.bin/sshpk-sign.cmd
+	new file:   app/node_modules/.bin/sshpk-verify
+	new file:   app/node_modules/.bin/sshpk-verify.cmd
+	new file:   app/node_modules/.bin/strip-indent
+	new file:   app/node_modules/.bin/strip-indent.cmd
+	new file:   app/node_modules/.bin/uuid
+	new file:   app/node_modules/.bin/uuid.cmd
+	new file:   app/node_modules/.bin/which
+	new file:   app/node_modules/.bin/which.cmd
+	new file:   app/package-lock.json
+	new file:   app/package.json
+	renamed:    game.js -> app/public/game.js
+	renamed:    leaderboard.js -> app/public/leaderboard.js
+	renamed:    public/lib/jquery/jquery-3.2.1.min.js -> app/public/lib/jquery/jquery-3.2.1.min.js
+	renamed:    p5/addons/p5.dom.js -> app/public/lib/p5/addons/p5.dom.js
+	renamed:    p5/addons/p5.dom.min.js -> app/public/lib/p5/addons/p5.dom.min.js
+	renamed:    p5/addons/p5.serialport.js -> app/public/lib/p5/addons/p5.serialport.js
+	renamed:    p5/addons/p5.sound.js -> app/public/lib/p5/addons/p5.sound.js
+	renamed:    p5/addons/p5.sound.min.js -> app/public/lib/p5/addons/p5.sound.min.js
+	renamed:    p5/p5.js -> app/public/lib/p5/p5.js
+	renamed:    p5/p5.min.js -> app/public/lib/p5/p5.min.js
+	renamed:    public/lib/semantic/calendar.min.css -> app/public/lib/semantic/calendar.min.css
+	renamed:    public/lib/semantic/calendar.min.js -> app/public/lib/semantic/calendar.min.js
+	renamed:    public/lib/semantic/icon.min.css -> app/public/lib/semantic/icon.min.css
+	renamed:    public/lib/semantic/semantic.min.css -> app/public/lib/semantic/semantic.min.css
+	renamed:    public/lib/semantic/semantic.min.js -> app/public/lib/semantic/semantic.min.js
+	renamed:    public/lib/semantic/themes/basic/assets/fonts/icons.eot -> app/public/lib/semantic/themes/basic/assets/fonts/icons.eot
+	renamed:    public/lib/semantic/themes/basic/assets/fonts/icons.svg -> app/public/lib/semantic/themes/basic/assets/fonts/icons.svg
+	renamed:    public/lib/semantic/themes/basic/assets/fonts/icons.ttf -> app/public/lib/semantic/themes/basic/assets/fonts/icons.ttf
+	renamed:    public/lib/semantic/themes/basic/assets/fonts/icons.woff -> app/public/lib/semantic/themes/basic/assets/fonts/icons.woff
+	renamed:    public/lib/semantic/themes/default/assets/fonts/icons.eot -> app/public/lib/semantic/themes/default/assets/fonts/icons.eot
+	renamed:    public/lib/semantic/themes/default/assets/fonts/icons.otf -> app/public/lib/semantic/themes/default/assets/fonts/icons.otf
+	renamed:    public/lib/semantic/themes/default/assets/fonts/icons.svg -> app/public/lib/semantic/themes/default/assets/fonts/icons.svg
+	renamed:    public/lib/semantic/themes/default/assets/fonts/icons.ttf -> app/public/lib/semantic/themes/default/assets/fonts/icons.ttf
+	renamed:    public/lib/semantic/themes/default/assets/fonts/icons.woff -> app/public/lib/semantic/themes/default/assets/fonts/icons.woff
+	renamed:    public/lib/semantic/themes/default/assets/images/flags.png -> app/public/lib/semantic/themes/default/assets/images/flags.png
+	renamed:    sketch.js -> app/public/sketch.js
+	renamed:    style.css -> app/public/stylesheets/style.css
+	deleted:    assets/leaderboard.csv
+	deleted:    images/Landscape logo finished.png
+	deleted:    serial.js
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	app/node_modules/@types/
+	app/node_modules/abbrev/
+	app/node_modules/ajv/
+	app/node_modules/ansi-regex/
+	app/node_modules/ansi-styles/
+	app/node_modules/any-promise/
+	app/node_modules/aproba/
+	app/node_modules/are-we-there-yet/
+	app/node_modules/array-find-index/
+	app/node_modules/asar/
+	app/node_modules/asn1/
+	app/node_modules/assert-plus/
+	app/node_modules/asynckit/
+	app/node_modules/author-regex/
+	app/node_modules/aws-sign2/
+	app/node_modules/aws4/
+	app/node_modules/balanced-match/
+	app/node_modules/base64-js/
+	app/node_modules/bcrypt-pbkdf/
+	app/node_modules/binary/
+	app/node_modules/bindings/
+	app/node_modules/bl/
+	app/node_modules/block-stream/
+	app/node_modules/bluebird/
+	app/node_modules/boom/
+	app/node_modules/brace-expansion/
+	app/node_modules/buffers/
+	app/node_modules/builtin-modules/
+	app/node_modules/camelcase-keys/
+	app/node_modules/camelcase/
+	app/node_modules/caseless/
+	app/node_modules/chainsaw/
+	app/node_modules/chalk/
+	app/node_modules/chownr/
+	app/node_modules/chromium-pickle-js/
+	app/node_modules/cli-cursor/
+	app/node_modules/cli-spinners/
+	app/node_modules/cliui/
+	app/node_modules/co/
+	app/node_modules/code-point-at/
+	app/node_modules/colors/
+	app/node_modules/combined-stream/
+	app/node_modules/commander/
+	app/node_modules/compare-version/
+	app/node_modules/concat-map/
+	app/node_modules/concat-stream/
+	app/node_modules/console-control-strings/
+	app/node_modules/core-util-is/
+	app/node_modules/cryptiles/
+	app/node_modules/cuint/
+	app/node_modules/currently-unhandled/
+	app/node_modules/dashdash/
+	app/node_modules/debug/
+	app/node_modules/decamelize/
+	app/node_modules/decompress-zip/
+	app/node_modules/deep-extend/
+	app/node_modules/delayed-stream/
+	app/node_modules/delegates/
+	app/node_modules/detect-libc/
+	app/node_modules/ecc-jsbn/
+	app/node_modules/electron-download/
+	app/node_modules/electron-osx-sign/
+	app/node_modules/electron-packager/
+	app/node_modules/electron-rebuild/
+	app/node_modules/electron/
+	app/node_modules/end-of-stream/
+	app/node_modules/env-paths/
+	app/node_modules/error-ex/
+	app/node_modules/es6-promise/
+	app/node_modules/escape-string-regexp/
+	app/node_modules/expand-template/
+	app/node_modules/extend/
+	app/node_modules/extract-zip/
+	app/node_modules/extsprintf/
+	app/node_modules/fast-deep-equal/
+	app/node_modules/fast-json-stable-stringify/
+	app/node_modules/fd-slicer/
+	app/node_modules/find-up/
+	app/node_modules/forever-agent/
+	app/node_modules/form-data/
+	app/node_modules/fs-extra/
+	app/node_modules/fs.realpath/
+	app/node_modules/fstream/
+	app/node_modules/gauge/
+	app/node_modules/get-caller-file/
+	app/node_modules/get-package-info/
+	app/node_modules/get-stdin/
+	app/node_modules/getpass/
+	app/node_modules/github-from-package/
+	app/node_modules/glob/
+	app/node_modules/graceful-fs/
+	app/node_modules/har-schema/
+	app/node_modules/har-validator/
+	app/node_modules/has-ansi/
+	app/node_modules/has-unicode/
+	app/node_modules/hawk/
+	app/node_modules/hoek/
+	app/node_modules/home-path/
+	app/node_modules/hosted-git-info/
+	app/node_modules/http-signature/
+	app/node_modules/indent-string/
+	app/node_modules/inflight/
+	app/node_modules/inherits/
+	app/node_modules/ini/
+	app/node_modules/invert-kv/
+	app/node_modules/is-arrayish/
+	app/node_modules/is-builtin-module/
+	app/node_modules/is-finite/
+	app/node_modules/is-fullwidth-code-point/
+	app/node_modules/is-promise/
+	app/node_modules/is-typedarray/
+	app/node_modules/is-utf8/
+	app/node_modules/isarray/
+	app/node_modules/isbinaryfile/
+	app/node_modules/isexe/
+	app/node_modules/isstream/
+	app/node_modules/jquery/
+	app/node_modules/jsbn/
+	app/node_modules/json-schema-traverse/
+	app/node_modules/json-schema/
+	app/node_modules/json-stringify-safe/
+	app/node_modules/jsonfile/
+	app/node_modules/jsprim/
+	app/node_modules/klaw/
+	app/node_modules/lcid/
+	app/node_modules/load-json-file/
+	app/node_modules/locate-path/
+	app/node_modules/lodash.assign/
+	app/node_modules/lodash.get/
+	app/node_modules/log-symbols/
+	app/node_modules/loud-rejection/
+	app/node_modules/map-obj/
+	app/node_modules/meow/
+	app/node_modules/mime-db/
+	app/node_modules/mime-types/
+	app/node_modules/mimic-fn/
+	app/node_modules/minimatch/
+	app/node_modules/minimist/
+	app/node_modules/mkdirp/
+	app/node_modules/mkpath/
+	app/node_modules/mksnapshot/
+	app/node_modules/ms/
+	app/node_modules/mz/
+	app/node_modules/nan/
+	app/node_modules/node-abi/
+	app/node_modules/node-gyp/
+	app/node_modules/nodeify/
+	app/node_modules/noop-logger/
+	app/node_modules/nopt/
+	app/node_modules/normalize-package-data/
+	app/node_modules/npmlog/
+	app/node_modules/nugget/
+	app/node_modules/number-is-nan/
+	app/node_modules/oauth-sign/
+	app/node_modules/object-assign/
+	app/node_modules/object-keys/
+	app/node_modules/once/
+	app/node_modules/onetime/
+	app/node_modules/ora/
+	app/node_modules/os-homedir/
+	app/node_modules/os-locale/
+	app/node_modules/os-tmpdir/
+	app/node_modules/osenv/
+	app/node_modules/p-limit/
+	app/node_modules/p-locate/
+	app/node_modules/p-try/
+	app/node_modules/parse-author/
+	app/node_modules/parse-json/
+	app/node_modules/path-exists/
+	app/node_modules/path-is-absolute/
+	app/node_modules/path-parse/
+	app/node_modules/path-type/
+	app/node_modules/pend/
+	app/node_modules/performance-now/
+	app/node_modules/pify/
+	app/node_modules/pinkie-promise/
+	app/node_modules/pinkie/
+	app/node_modules/plist/
+	app/node_modules/prebuild-install/
+	app/node_modules/pretty-bytes/
+	app/node_modules/process-nextick-args/
+	app/node_modules/progress-stream/
+	app/node_modules/promirepl/
+	app/node_modules/promise/
+	app/node_modules/pruner/
+	app/node_modules/pump/
+	app/node_modules/punycode/
+	app/node_modules/q/
+	app/node_modules/qs/
+	app/node_modules/rc/
+	app/node_modules/rcedit/
+	app/node_modules/read-pkg-up/
+	app/node_modules/read-pkg/
+	app/node_modules/readable-stream/
+	app/node_modules/redent/
+	app/node_modules/repeating/
+	app/node_modules/request/
+	app/node_modules/require-directory/
+	app/node_modules/require-main-filename/
+	app/node_modules/resolve/
+	app/node_modules/restore-cursor/
+	app/node_modules/rimraf/
+	app/node_modules/rxjs/
+	app/node_modules/safe-buffer/
+	app/node_modules/sanitize-filename/
+	app/node_modules/semver/
+	app/node_modules/serialport/
+	app/node_modules/set-blocking/
+	app/node_modules/signal-exit/
+	app/node_modules/simple-get/
+	app/node_modules/single-line-log/
+	app/node_modules/sntp/
+	app/node_modules/spawn-rx/
+	app/node_modules/spdx-correct/
+	app/node_modules/spdx-expression-parse/
+	app/node_modules/spdx-license-ids/
+	app/node_modules/speedometer/
+	app/node_modules/sshpk/
+	app/node_modules/string-width/
+	app/node_modules/string_decoder/
+	app/node_modules/stringstream/
+	app/node_modules/strip-ansi/
+	app/node_modules/strip-bom/
+	app/node_modules/strip-indent/
+	app/node_modules/strip-json-comments/
+	app/node_modules/sumchecker/
+	app/node_modules/supports-color/
+	app/node_modules/symbol-observable/
+	app/node_modules/tar-fs/
+	app/node_modules/tar-stream/
+	app/node_modules/tar/
+	app/node_modules/thenify-all/
+	app/node_modules/thenify/
+	app/node_modules/throttleit/
+	app/node_modules/through2/
+	app/node_modules/tmp/
+	app/node_modules/touch/
+	app/node_modules/tough-cookie/
+	app/node_modules/traverse/
+	app/node_modules/trim-newlines/
+	app/node_modules/truncate-utf8-bytes/
+	app/node_modules/tunnel-agent/
+	app/node_modules/tweetnacl/
+	app/node_modules/typedarray/
+	app/node_modules/universalify/
+	app/node_modules/unzip-response/
+	app/node_modules/utf8-byte-length/
+	app/node_modules/util-deprecate/
+	app/node_modules/uuid/
+	app/node_modules/validate-npm-package-license/
+	app/node_modules/verror/
+	app/node_modules/which-module/
+	app/node_modules/which/
+	app/node_modules/wide-align/
+	app/node_modules/wrap-ansi/
+	app/node_modules/wrappy/
+	app/node_modules/xmlbuilder/
+	app/node_modules/xmldom/
+	app/node_modules/xtend/
+	app/node_modules/y18n/
+	app/node_modules/yargs-parser/
+	app/node_modules/yargs/
+	app/node_modules/yauzl/
+	app/release-builds/
+	status.txt
+
